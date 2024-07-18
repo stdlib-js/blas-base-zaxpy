@@ -39,7 +39,7 @@
   "dependencies": {
     "@stdlib/assert-is-error": "^0.2.1",
     "@stdlib/blas-base-dcabs1": "^0.0.1",
-    "@stdlib/math-base-ops-cadd": "^0.2.1",
+    "@stdlib/complex-float64-base-add": "github:stdlib-js/complex-float64-base-add#main",
     "@stdlib/math-base-ops-cmul": "^0.2.1",
     "@stdlib/strided-base-stride2offset": "github:stdlib-js/strided-base-stride2offset#main",
     "@stdlib/types": "^0.3.2",
