@@ -42,7 +42,7 @@ limitations under the License.
 ## Usage
 
 ```javascript
-import zaxpy from 'https://cdn.jsdelivr.net/gh/stdlib-js/blas-base-zaxpy@esm/index.mjs';
+import zaxpy from 'https://cdn.jsdelivr.net/gh/stdlib-js/blas-base-zaxpy@v0.1.0-esm/index.mjs';
 ```
 
 #### zaxpy( N, za, zx, strideX, zy, strideY )
@@ -226,7 +226,7 @@ import Complex128 from 'https://cdn.jsdelivr.net/gh/stdlib-js/complex-float64-ct
 import zcopy from 'https://cdn.jsdelivr.net/gh/stdlib-js/blas-base-zcopy@esm/index.mjs';
 import zeros from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-zeros@esm/index.mjs';
 import logEach from 'https://cdn.jsdelivr.net/gh/stdlib-js/console-log-each@esm/index.mjs';
-import zaxpy from 'https://cdn.jsdelivr.net/gh/stdlib-js/blas-base-zaxpy@esm/index.mjs';
+import zaxpy from 'https://cdn.jsdelivr.net/gh/stdlib-js/blas-base-zaxpy@v0.1.0-esm/index.mjs';
 
 function rand() {
     return new Complex128( discreteUniform( 0, 10 ), discreteUniform( -5, 5 ) );
