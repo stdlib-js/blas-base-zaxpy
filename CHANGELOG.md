@@ -2,19 +2,9 @@
 
 > Package changelog.
 
-<section class="release" id="v0.1.0">
+<section class="release" id="unreleased">
 
-## 0.1.0 (2024-07-28)
-
-<section class="features">
-
-### Features
-
--   [`85ffc1a`](https://github.com/stdlib-js/stdlib/commit/85ffc1a73bdcabdfc4c2a550e398a285eae49ebb) - add `blas/base/zaxpy` [(#2468)](https://github.com/stdlib-js/stdlib/pull/2468)
-
-</section>
-
-<!-- /.features -->
+## Unreleased (2024-08-01)
 
 <section class="commits">
 
@@ -22,12 +12,7 @@
 
 <details>
 
--   [`e3a3679`](https://github.com/stdlib-js/stdlib/commit/e3a3679f1e733cf02ce47cdc4bd0137bd37bef41) - **refactor:** update paths _(by Athan Reines)_
--   [`0406147`](https://github.com/stdlib-js/stdlib/commit/04061476d1036e1b8b786736b1ba1653eddff1ef) - **refactor:** update paths _(by Athan Reines)_
--   [`32bbcb3`](https://github.com/stdlib-js/stdlib/commit/32bbcb3b3dae1f028fd18166ee7875a93d44d0ee) - **refactor:** update paths _(by Athan Reines)_
--   [`ed9c0a5`](https://github.com/stdlib-js/stdlib/commit/ed9c0a5e55ff09af3dd6af8c38615480e2c1828e) - **refactor:** update paths _(by Athan Reines)_
--   [`e693161`](https://github.com/stdlib-js/stdlib/commit/e6931618c88d2bc3f957fecdca013bcda2558e0c) - **test:** fix test comparisons _(by Athan Reines)_
--   [`85ffc1a`](https://github.com/stdlib-js/stdlib/commit/85ffc1a73bdcabdfc4c2a550e398a285eae49ebb) - **feat:** add `blas/base/zaxpy` [(#2468)](https://github.com/stdlib-js/stdlib/pull/2468) _(by Aman Bhansali, Athan Reines)_
+-   [`22c4d29`](https://github.com/stdlib-js/stdlib/commit/22c4d29898e2b5bb4cb071a6b7f62536027eaf28) - **docs:** remove blank line _(by Athan Reines)_
 
 </details>
 
@@ -39,14 +24,23 @@
 
 ### Contributors
 
-A total of 2 people contributed to this release. Thank you to the following contributors:
+A total of 1 person contributed to this release. Thank you to this contributor:
 
--   Aman Bhansali
 -   Athan Reines
 
 </section>
 
 <!-- /.contributors -->
+
+</section>
+
+<!-- /.release -->
+
+<section class="release" id="v0.1.0">
+
+## 0.1.0 (2024-07-28)
+
+No changes reported for this release.
 
 </section>
 
