@@ -1,9 +1,9 @@
-"use strict";var x=function(e,r){return function(){return r||e((r={exports:{}}).exports,r),r.exports}};var c=x(function(H,f){
-var _=require('@stdlib/blas-base-dcabs1/dist'),b=require('@stdlib/complex-float64-base-mul/dist'),E=require('@stdlib/complex-float64-base-add/dist');function O(e,r,u,i,v,a,s,n){var q,t,o;if(e<=0||_(r)===0)return a;for(q=v,t=n,o=0;o<e;o++)a.set(E(b(r,u.get(q)),a.get(t)),t),q+=i,t+=s;return a}f.exports=O
-});var m=x(function(I,y){
-var d=require('@stdlib/strided-base-stride2offset/dist'),h=c();function k(e,r,u,i,v,a){var s=d(e,i),n=d(e,a);return h(e,r,u,i,s,v,a,n)}y.exports=k
-});var g=x(function(J,l){
-var w=require('@stdlib/utils-define-nonenumerable-read-only-property/dist'),j=m(),A=c();w(j,"ndarray",A);l.exports=j
-});var B=require("path").join,C=require('@stdlib/utils-try-require/dist'),D=require('@stdlib/assert-is-error/dist'),F=g(),p,R=C(B(__dirname,"./native.js"));D(R)?p=F:p=R;module.exports=p;
+"use strict";var y=function(e,r){return function(){return r||e((r={exports:{}}).exports,r),r.exports}};var f=y(function(S,w){
+var g=require('@stdlib/strided-base-reinterpret-complex128/dist'),A=require('@stdlib/complex-float64-base-mul-add/dist').assign,B=require('@stdlib/complex-float64-real/dist'),C=require('@stdlib/complex-float64-imag/dist'),D=require('@stdlib/blas-base-dcabs1/dist');function F(e,r,s,v,n,a,q,o){var x,u,d,m,t,i,l,j,p;if(e<=0||D(r)===0)return a;for(l=B(r),j=C(r),x=g(s,0),u=g(a,0),d=v*2,m=q*2,t=n*2,i=o*2,p=0;p<e;p++)A(l,j,x[t],x[t+1],u[i],u[i+1],u,1,i),t+=d,i+=m;return a}w.exports=F
+});var b=y(function(T,_){
+var R=require('@stdlib/strided-base-stride2offset/dist'),G=f();function H(e,r,s,v,n,a){var q=R(e,v),o=R(e,a);return G(e,r,s,v,q,n,a,o)}_.exports=H
+});var h=y(function(U,O){
+var I=require('@stdlib/utils-define-nonenumerable-read-only-property/dist'),E=b(),J=f();I(E,"ndarray",J);O.exports=E
+});var K=require("path").join,L=require('@stdlib/utils-try-require/dist'),M=require('@stdlib/assert-is-error/dist'),P=h(),c,k=L(K(__dirname,"./native.js"));M(k)?c=P:c=k;module.exports=c;
 /** @license Apache-2.0 */
 //# sourceMappingURL=index.js.map

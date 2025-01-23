@@ -4,7 +4,7 @@
 
 <section class="release" id="unreleased">
 
-## Unreleased (2024-12-01)
+## Unreleased (2025-01-23)
 
 <section class="commits">
 
@@ -12,6 +12,7 @@
 
 <details>
 
+-   [`7560ab3`](https://github.com/stdlib-js/stdlib/commit/7560ab3b55a8dfca4d494ea806f392b44fd93d09) - **refactor:** avoid temporary complex number instantiation _(by Athan Reines)_
 -   [`8f72b43`](https://github.com/stdlib-js/stdlib/commit/8f72b432c0fc81a78641d5689722ecc9671c6f02) - **style:** add missing spaces around parentheses _(by Philipp Burckhardt)_
 -   [`2b123f6`](https://github.com/stdlib-js/stdlib/commit/2b123f66af0c8d053d0d7d0dc6fae718fc182bb3) - **style:** fix missing spaces _(by Athan Reines)_
 
