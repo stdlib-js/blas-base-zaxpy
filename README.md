@@ -35,38 +35,32 @@ limitations under the License.
 
 > Scale a double-precision complex floating-point vector by a double-precision complex floating-point constant and add the result to a double-precision complex floating-point vector.
 
+<section class="installation">
 
+## Installation
+
+```bash
+npm install @stdlib/blas-base-zaxpy
+```
+
+Alternatively,
+
+-   To load the package in a website via a `script` tag without installation and bundlers, use the [ES Module][es-module] available on the [`esm`][esm-url] branch (see [README][esm-readme]).
+-   If you are using Deno, visit the [`deno`][deno-url] branch (see [README][deno-readme] for usage intructions).
+-   For use in Observable, or in browser/node environments, use the [Universal Module Definition (UMD)][umd] build available on the [`umd`][umd-url] branch (see [README][umd-readme]).
+
+The [branches.md][branches-url] file summarizes the available branches and displays a diagram illustrating their relationships.
+
+To view installation and usage instructions specific to each branch build, be sure to explicitly navigate to the respective README files on each branch, as linked to above.
+
+</section>
 
 <section class="usage">
 
 ## Usage
 
-To use in Observable,
-
 ```javascript
-zaxpy = require( 'https://cdn.jsdelivr.net/gh/stdlib-js/blas-base-zaxpy@umd/browser.js' )
-```
-
-To vendor stdlib functionality and avoid installing dependency trees for Node.js, you can use the UMD server build:
-
-```javascript
-var zaxpy = require( 'path/to/vendor/umd/blas-base-zaxpy/index.js' )
-```
-
-To include the bundle in a webpage,
-
-```html
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/blas-base-zaxpy@umd/browser.js"></script>
-```
-
-If no recognized module system is present, access bundle contents via the global scope:
-
-```html
-<script type="text/javascript">
-(function () {
-    window.zaxpy;
-})();
-</script>
+var zaxpy = require( '@stdlib/blas-base-zaxpy' );
 ```
 
 #### zaxpy( N, za, zx, strideX, zy, strideY )
@@ -76,23 +70,13 @@ Scales values from `zx` by `za` and adds the result to `zy`.
 ```javascript
 var Complex128Array = require( '@stdlib/array-complex128' );
 var Complex128 = require( '@stdlib/complex-float64-ctor' );
-var real = require( '@stdlib/complex-float64-real' );
-var imag = require( '@stdlib/complex-float64-imag' );
 
 var zx = new Complex128Array( [ 1.0, 2.0, 3.0, 4.0, 5.0, 6.0 ] );
 var zy = new Complex128Array( [ 1.0, 1.0, 1.0, 1.0, 1.0, 1.0 ] );
 var za = new Complex128( 2.0, 2.0 );
 
 zaxpy( 3, za, zx, 1, zy, 1 );
-
-var z = zy.get( 0 );
-// returns <Complex128>
-
-var re = real( z );
-// returns -1.0
-
-var im = imag( z );
-// returns 7.0
+// zy => <Complex128Array>[ -1.0, 7.0, -1.0, 15.0, -1.0, 23.0 ]
 ```
 
 The function has the following parameters:
@@ -109,23 +93,13 @@ The `N` and stride parameters determine how values from `zx` are scaled by `za` 
 ```javascript
 var Complex128Array = require( '@stdlib/array-complex128' );
 var Complex128 = require( '@stdlib/complex-float64-ctor' );
-var real = require( '@stdlib/complex-float64-real' );
-var imag = require( '@stdlib/complex-float64-imag' );
 
 var zx = new Complex128Array( [ 1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0 ] );
 var zy = new Complex128Array( [ 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0 ] );
 var za = new Complex128( 2.0, 2.0 );
 
 zaxpy( 2, za, zx, 2, zy, 2 );
-
-var z = zy.get( 0 );
-// returns <Complex128>
-
-var re = real( z );
-// returns -1.0
-
-var im = imag( z );
-// returns 7.0
+// zy => <Complex128Array>[ -1.0, 7.0, 1.0, 1.0, -1.0, 23.0, 1.0, 1.0 ]
 ```
 
 Note that indexing is relative to the first index. To introduce an offset, use [`typed array`][mdn-typed-array] views.
@@ -135,8 +109,6 @@ Note that indexing is relative to the first index. To introduce an offset, use [
 ```javascript
 var Complex128Array = require( '@stdlib/array-complex128' );
 var Complex128 = require( '@stdlib/complex-float64-ctor' );
-var real = require( '@stdlib/complex-float64-real' );
-var imag = require( '@stdlib/complex-float64-imag' );
 
 // Initial arrays...
 var zx0 = new Complex128Array( [ 1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0 ] );
@@ -151,15 +123,7 @@ var zy1 = new Complex128Array( zy0.buffer, zy0.BYTES_PER_ELEMENT*2 ); // start a
 
 // Scales values of `zx0` by `za` starting from second index and add the result to `zy0` starting from third index...
 zaxpy( 2, za, zx1, 1, zy1, 1 );
-
-var z = zy0.get( 2 );
-// returns <Complex128>
-
-var re = real( z );
-// returns -1.0
-
-var im = imag( z );
-// returns 15.0
+// zy0 => <Complex128Array>[ 1.0, 1.0, 1.0, 1.0, -1.0, 15.0, -1.0, 23.0 ]
 ```
 
 #### zaxpy.ndarray( N, za, zx, strideX, offsetX, zy, strideY, offsetY )
@@ -169,23 +133,13 @@ Scales values from `zx` by `za` and adds the result to `zy` using alternative in
 ```javascript
 var Complex128Array = require( '@stdlib/array-complex128' );
 var Complex128 = require( '@stdlib/complex-float64-ctor' );
-var real = require( '@stdlib/complex-float64-real' );
-var imag = require( '@stdlib/complex-float64-imag' );
 
 var zx = new Complex128Array( [ 1.0, 2.0, 3.0, 4.0, 5.0, 6.0 ] );
 var zy = new Complex128Array( [ 1.0, 1.0, 1.0, 1.0, 1.0, 1.0 ] );
 var za = new Complex128( 2.0, 2.0 );
 
 zaxpy.ndarray( 3, za, zx, 1, 0, zy, 1, 0 );
-
-var z = zy.get( 0 );
-// returns <Complex128>
-
-var re = real( z );
-// returns -1.0
-
-var im = imag( z );
-// returns 7.0
+// zy => <Complex128Array>[ -1.0, 7.0, -1.0, 15.0, -1.0, 23.0 ]
 ```
 
 The function has the following additional parameters:
@@ -198,23 +152,13 @@ While [`typed array`][mdn-typed-array] views mandate a view offset based on the 
 ```javascript
 var Complex128Array = require( '@stdlib/array-complex128' );
 var Complex128 = require( '@stdlib/complex-float64-ctor' );
-var real = require( '@stdlib/complex-float64-real' );
-var imag = require( '@stdlib/complex-float64-imag' );
 
 var zx = new Complex128Array( [ 1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0 ] );
 var zy = new Complex128Array( [ 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0 ] );
 var za = new Complex128( 2.0, 2.0 );
 
 zaxpy.ndarray( 3, za, zx, 1, 1, zy, 1, 1 );
-
-var z = zy.get( 3 );
-// returns <Complex128>
-
-var re = real( z );
-// returns -1.0
-
-var im = imag( z );
-// returns 31.0
+// zy => <Complex128Array>[ 1.0, 1.0, -1.0, 15.0, -1.0, 23.0, -1.0, 31.0 ]
 ```
 
 </section>
@@ -238,19 +182,14 @@ var im = imag( z );
 
 <!-- eslint no-undef: "error" -->
 
-```html
-<!DOCTYPE html>
-<html lang="en">
-<body>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/random-base-discrete-uniform@umd/browser.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/array-filled-by@umd/browser.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/complex-float64-ctor@umd/browser.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/blas-base-zcopy@umd/browser.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/array-zeros@umd/browser.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/console-log-each@umd/browser.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/blas-base-zaxpy@umd/browser.js"></script>
-<script type="text/javascript">
-(function () {
+```javascript
+var discreteUniform = require( '@stdlib/random-base-discrete-uniform' );
+var filledarrayBy = require( '@stdlib/array-filled-by' );
+var Complex128 = require( '@stdlib/complex-float64-ctor' );
+var zcopy = require( '@stdlib/blas-base-zcopy' );
+var zeros = require( '@stdlib/array-zeros' );
+var logEach = require( '@stdlib/console-log-each' );
+var zaxpy = require( '@stdlib/blas-base-zaxpy' );
 
 function rand() {
     return new Complex128( discreteUniform( 0, 10 ), discreteUniform( -5, 5 ) );
@@ -267,11 +206,6 @@ zaxpy( zx.length, za, zx, 1, zy, 1 );
 
 // Print the results:
 logEach( '(%s)*(%s) + (%s) = %s', za, zx, zyc, zy );
-
-})();
-</script>
-</body>
-</html>
 ```
 
 </section>
@@ -364,9 +298,9 @@ Copyright &copy; 2016-2025. The Stdlib [Authors][stdlib-authors].
 
 [mdn-typed-array]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray
 
-[@stdlib/array/complex128]: https://github.com/stdlib-js/array-complex128/tree/umd
+[@stdlib/array/complex128]: https://github.com/stdlib-js/array-complex128
 
-[@stdlib/complex/float64/ctor]: https://github.com/stdlib-js/complex-float64-ctor/tree/umd
+[@stdlib/complex/float64/ctor]: https://github.com/stdlib-js/complex-float64-ctor
 
 </section>
 
