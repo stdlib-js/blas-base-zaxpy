@@ -1,7 +1,7 @@
 /**
 * @license Apache-2.0
 *
-* Copyright (c) 2024 The Stdlib Authors.
+* Copyright (c) 2025 The Stdlib Authors.
 *
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
@@ -20,6 +20,7 @@
 
 // MODULES //
 
+var resolve = require( 'path' ).resolve;
 var bench = require( '@stdlib/bench-harness' );
 var uniform = require( '@stdlib/random-array-uniform' );
 var isnan = require( '@stdlib/math-base-assert-is-nan' );
@@ -27,12 +28,16 @@ var pow = require( '@stdlib/math-base-special-pow' );
 var Complex128Array = require( '@stdlib/array-complex128' );
 var Complex128 = require( '@stdlib/complex-float64-ctor' );
 var reinterpret = require( '@stdlib/strided-base-reinterpret-complex128' );
+var tryRequire = require( '@stdlib/utils-try-require' );
 var pkg = require( './../package.json' ).name;
-var zaxpy = require( './../lib/ndarray.js' );
 
 
 // VARIABLES //
 
+var zaxpy = tryRequire( resolve( __dirname, './../lib/zaxpy.native.js' ) );
+var opts = {
+	'skip': ( zaxpy instanceof Error )
+};
 var options = {
 	'dtype': 'float64'
 };
@@ -73,7 +78,7 @@ function createBenchmark( N ) {
 
 		b.tic();
 		for ( i = 0; i < b.iterations; i++ ) {
-			zaxpy( x.length, alpha, x, 1, 0, y, 1, 0 );
+			zaxpy( x.length, alpha, x, 1, y, 1 );
 			if ( isnan( viewY[ i%(N*2) ] ) ) {
 				b.fail( 'should not return NaN' );
 			}
@@ -108,7 +113,7 @@ function main() {
 	for ( i = min; i <= max; i++ ) {
 		N = pow( 10, i );
 		f = createBenchmark( N );
-		bench( pkg+':ndarray:len='+N, f );
+		bench( pkg+'::native:len='+N, opts, f );
 	}
 }
 

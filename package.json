@@ -14,11 +14,15 @@
     }
   ],
   "main": "./lib",
+  "browser": "./lib/main.js",
+  "gypfile": false,
   "directories": {
     "benchmark": "./benchmark",
     "doc": "./docs",
     "example": "./examples",
+    "include": "./include",
     "lib": "./lib",
+    "src": "./src",
     "test": "./test"
   },
   "types": "./docs/types",
@@ -39,13 +43,22 @@
   "dependencies": {
     "@stdlib/assert-is-error": "^0.2.2",
     "@stdlib/blas-base-dcabs1": "^0.0.2",
+    "@stdlib/blas-base-shared": "^0.1.0",
     "@stdlib/complex-float64-base-mul-add": "github:stdlib-js/complex-float64-base-mul-add#main",
+    "@stdlib/complex-float64-ctor": "^0.0.3",
     "@stdlib/complex-float64-imag": "^0.1.1",
     "@stdlib/complex-float64-real": "^0.1.1",
+    "@stdlib/napi-argv": "^0.2.2",
+    "@stdlib/napi-argv-complex128": "^0.1.0",
+    "@stdlib/napi-argv-int64": "^0.2.2",
+    "@stdlib/napi-argv-strided-complex128array": "^0.3.2",
+    "@stdlib/napi-export": "^0.2.2",
+    "@stdlib/strided-base-min-view-buffer-index": "^0.2.2",
     "@stdlib/strided-base-reinterpret-complex128": "^0.2.2",
     "@stdlib/strided-base-stride2offset": "^0.1.0",
     "@stdlib/types": "^0.4.3",
     "@stdlib/utils-define-nonenumerable-read-only-property": "^0.2.2",
+    "@stdlib/utils-library-manifest": "^0.2.2",
     "@stdlib/utils-try-require": "^0.2.2"
   },
   "devDependencies": {
@@ -55,7 +68,6 @@
     "@stdlib/array-zeros": "^0.2.2",
     "@stdlib/assert-is-browser": "^0.2.2",
     "@stdlib/blas-base-zcopy": "^0.1.1",
-    "@stdlib/complex-float64-ctor": "^0.0.3",
     "@stdlib/console-log-each": "^0.2.2",
     "@stdlib/constants-float64-eps": "^0.2.2",
     "@stdlib/math-base-assert-is-nan": "^0.2.2",

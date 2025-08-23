@@ -4,7 +4,17 @@
 
 <section class="release" id="unreleased">
 
-## Unreleased (2025-08-18)
+## Unreleased (2025-08-23)
+
+<section class="features">
+
+### Features
+
+-   [`e457e47`](https://github.com/stdlib-js/stdlib/commit/e457e479937148f7c056b3717a913dd8e02bf9fe) - add C implementation for `blas/base/zaxpy` [(#7594)](https://github.com/stdlib-js/stdlib/pull/7594)
+
+</section>
+
+<!-- /.features -->
 
 <section class="commits">
 
@@ -12,6 +22,7 @@
 
 <details>
 
+-   [`e457e47`](https://github.com/stdlib-js/stdlib/commit/e457e479937148f7c056b3717a913dd8e02bf9fe) - **feat:** add C implementation for `blas/base/zaxpy` [(#7594)](https://github.com/stdlib-js/stdlib/pull/7594) _(by Shabareesh Shetty, Athan Reines, stdlib-bot)_
 -   [`942294c`](https://github.com/stdlib-js/stdlib/commit/942294c9665952160bd142c8e2e72188a568503e) - **docs:** change variable naming in `blas/base/zaxpy` [(#6815)](https://github.com/stdlib-js/stdlib/pull/6815) _(by Shabareesh Shetty)_
 -   [`c9e3ff1`](https://github.com/stdlib-js/stdlib/commit/c9e3ff14ed5480358d1b0a97c7eafccd8234a1e9) - **test:** increase code coverage in `blas/base/zaxpy` [(#6568)](https://github.com/stdlib-js/stdlib/pull/6568) _(by Shabareesh Shetty)_
 -   [`7cfb8f7`](https://github.com/stdlib-js/stdlib/commit/7cfb8f70164eec956307120577cdcebf933df848) - **docs:** update examples for `blas/base/zaxpy` [(#5173)](https://github.com/stdlib-js/stdlib/pull/5173) _(by Gururaj Gurram)_
