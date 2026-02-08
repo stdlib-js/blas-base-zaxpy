@@ -44,7 +44,7 @@ limitations under the License.
 To use in Observable,
 
 ```javascript
-zaxpy = require( 'https://cdn.jsdelivr.net/gh/stdlib-js/blas-base-zaxpy@umd/browser.js' )
+zaxpy = require( 'https://cdn.jsdelivr.net/gh/stdlib-js/blas-base-zaxpy@v0.2.1-umd/browser.js' )
 ```
 
 To vendor stdlib functionality and avoid installing dependency trees for Node.js, you can use the UMD server build:
@@ -56,7 +56,7 @@ var zaxpy = require( 'path/to/vendor/umd/blas-base-zaxpy/index.js' )
 To include the bundle in a webpage,
 
 ```html
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/blas-base-zaxpy@umd/browser.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/blas-base-zaxpy@v0.2.1-umd/browser.js"></script>
 ```
 
 If no recognized module system is present, access bundle contents via the global scope:
@@ -198,7 +198,7 @@ zaxpy.ndarray( 3, alpha, x, 1, 1, y, 1, 1 );
 <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/blas-base-zcopy@umd/browser.js"></script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/array-zeros@umd/browser.js"></script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/console-log-each@umd/browser.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/blas-base-zaxpy@umd/browser.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/blas-base-zaxpy@v0.2.1-umd/browser.js"></script>
 <script type="text/javascript">
 (function () {
 
